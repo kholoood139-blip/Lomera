@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوميير | Lumière - منتجات العناية بالبشرة والانتعاش الخياري</title>
+  <meta name="description" content="لوميير - عناية فائقة مستوحاة من انتعاش الخيار الطبيعي والنباتات النقية لترطيب عميق وبشرة متألقة.">
+
+  <!-- Google Fonts: Marhey & Readex Pro for clean, ultra-modern luxury typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Readex Pro"', 'sans-serif'],
+          },
+          colors: {
+            // Cucumber Fresh & Spa Glow Palette
+            cucumber: {
+              50: '#F4FAF6',   // Ultra soft cucumber water tint
+              100: '#E8F5EE',  // Fresh crisp tint
+              200: '#D1ECDE',  // Dewy petal green
+              300: '#A9DCC3',  // Mild cucumber flesh
+              400: '#75C4A2',  // Vibrant fresh minty green
+              500: '#48A782',  // Primary cucumber jade
+              600: '#338968',  // Deep cucumber green
+              700: '#286D54',  // Forest cucumber peel
+              800: '#225744',  // Botanical dark
+              900: '#153A2D',  // Luxury dark emerald base
+              950: '#0B231B',
+            },
+            sage: {
+              50: '#F7F9F7',
+              100: '#EFF3F0',
+              200: '#DFE8E2',
+              300: '#C7D7CD',
+            },
+            pearl: {
+              50: '#FCFDFD',
+              100: '#F7FAF8',
+            },
+            accentGold: {
+              400: '#E2BF7D',
+              500: '#C99E52',
+              600: '#A88037',
+            }
+          },
+          boxShadow: {
+            'luxury': '0 12px 35px -8px rgba(34, 87, 68, 0.10), 0 4px 10px -2px rgba(0, 0, 0, 0.03)',
+            'luxury-hover': '0 22px 45px -10px rgba(34, 87, 68, 0.20), 0 10px 20px -5px rgba(0, 0, 0, 0.04)',
+            'cucumber-glow': '0 0 35px rgba(72, 167, 130, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Readex Pro', sans-serif;
+      letter-spacing: -0.015em;
+    }
+    h1, h2, h3, h4 {
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+<body class="bg-pearl-50 text-cucumber-950 antialiased min-h-screen selection:bg-cucumber-400 selection:text-white flex flex-col justify-between">
+
+  <!-- Floating Toast Notification -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-400 ease-out flex items-center gap-3 bg-cucumber-900/95 text-white backdrop-blur-md px-6 py-3.5 rounded-full shadow-2xl border border-cucumber-700/40">
+    <div class="w-6 h-6 rounded-full bg-cucumber-400/25 text-cucumber-300 flex items-center justify-center shrink-0">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <span id="toast-text" class="text-sm font-medium">تمت إضافة المنتج إلى سلتك بنجاح!</span>
+  </div>
+
+  <!-- Announcement Bar -->
+  <aside class="bg-cucumber-900 text-cucumber-100 text-xs py-2 px-4 text-center tracking-wide font-medium flex items-center justify-center gap-2">
+    <span>🥒 خلاصة الخيار المهدئة | توصيل مجاني للطلبات فوق 299 ر.س مع عينات مجانية</span>
+  </aside>
+
+  <!-- Global Header / Navbar -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-cucumber-100/90 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cucumber-700 to-cucumber-400 flex items-center justify-center text-white shadow-md group-hover:rotate-6 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold tracking-tight text-cucumber-950 leading-tight">لوميير</span>
+            <span class="text-[10px] tracking-widest text-cucumber-600 font-semibold uppercase">Lumière Botanicals</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-cucumber-800">
+          <a href="index.html" class="text-cucumber-600 font-semibold transition-colors">الرئيسية</a>
+          <a href="index.html#products-section" class="hover:text-cucumber-500 transition-colors">منتجات العناية</a>
+          <a href="about.html" class="hover:text-cucumber-500 transition-colors">من نحن</a>
+          <a href="#footer-contact" class="hover:text-cucumber-500 transition-colors">تواصل معنا</a>
+        </nav>
+
+        <!-- Header Actions: Cart & Menu -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <!-- Cart Button -->
+          <div class="relative flex items-center gap-2 text-sm text-cucumber-800 bg-cucumber-50 hover:bg-cucumber-100 transition-colors px-4 py-2 rounded-full border border-cucumber-200 shadow-sm cursor-pointer">
+            <svg class="w-4 h-4 text-cucumber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <span class="hidden sm:inline font-medium">السلة</span>
+            <span id="cart-counter" class="font-bold text-white bg-cucumber-600 w-5 h-5 rounded-full flex items-center justify-center text-xs transition-transform duration-300">0</span>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button 
+            type="button" 
+            onclick="toggleMobileMenu()" 
+            class="md:hidden p-2 rounded-xl text-cucumber-800 hover:text-cucumber-950 hover:bg-cucumber-100 focus:outline-none"
+            aria-label="القائمة"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-5 pt-2 border-t border-cucumber-100 flex flex-col gap-3 text-sm font-medium text-cucumber-800">
+        <a href="index.html" class="px-2 py-1 text-cucumber-600 font-semibold">الرئيسية</a>
+        <a href="index.html#products-section" class="px-2 py-1 hover:text-cucumber-500">منتجات العناية</a>
+        <a href="about.html" class="px-2 py-1 hover:text-cucumber-500">من نحن</a>
+        <a href="#footer-contact" class="px-2 py-1 hover:text-cucumber-500">تواصل معنا</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: Fresh Cucumber Spa Luxury Showcase -->
+  <section class="relative bg-gradient-to-b from-cucumber-100/70 via-cucumber-50/50 to-pearl-50 py-12 md:py-20 lg:py-24 border-b border-cucumber-200/50 overflow-hidden">
+    <!-- Ambient Cucumber Glows -->
+    <div class="absolute -top-32 -right-24 w-[34rem] h-[34rem] bg-cucumber-300/30 rounded-full blur-[110px] pointer-events-none"></div>
+    <div class="absolute top-1/2 -left-32 w-[30rem] h-[30rem] bg-cucumber-400/20 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-sage-200/40 rounded-full blur-[80px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Text & Call to Action (7 cols) -->
+        <div class="lg:col-span-7 text-center lg:text-right space-y-6">
+          
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 border border-cucumber-300 shadow-sm backdrop-blur-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-cucumber-500 animate-pulse"></span>
+            <span class="text-xs font-semibold text-cucumber-800 tracking-wide">انتعاش الخيار النقي وعصارة الألوفيرا</span>
+          </div>
+
+          <!-- Refined Proportional Heading -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cucumber-950 tracking-tight leading-snug">
+            دلّلي بشرتكِ بلمسة انتعاش <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-l from-cucumber-700 via-cucumber-600 to-cucumber-400">فائقة النقاء والترطيب العميق</span>
+          </h1>
+
+          <p class="max-w-xl mx-auto lg:mx-0 text-sm sm:text-base text-cucumber-800/85 leading-relaxed font-normal">
+            تركيبات علاجية طبيعية مستخلصة من ماء الخيار المهدئ وحمض الهيالورونيك النقي، صُممت لتمنح مسامكِ إشراقة ندية وترطيباً فورياً يخفف إجهاد البشرة.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#products-section" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-cucumber-800 hover:bg-cucumber-600 text-white text-sm font-semibold transition-all duration-300 shadow-luxury hover:shadow-luxury-hover hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
+              <span>تسوقي تشكيلة الانتعاش</span>
+              <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a href="about.html" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-white/90 hover:bg-cucumber-50 text-cucumber-900 text-sm font-semibold border border-cucumber-200 transition-all duration-300 shadow-sm hover:shadow flex items-center justify-center">
+              فلسفة النقاء الطبيعي
+            </a>
+          </div>
+
+          <!-- Social Proof & Customer Trust Stats -->
+          <div class="pt-6 border-t border-cucumber-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-10 text-xs text-cucumber-800">
+            <div class="flex items-center gap-2.5">
+              <div class="flex -space-x-2 space-x-reverse">
+                <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+                <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+                <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="عميلة">
+              </div>
+              <div class="flex flex-col text-right">
+                <div class="flex text-amber-500 text-xs font-bold leading-none">★★★★★</div>
+                <span class="text-[11px] text-cucumber-600 mt-1"><strong class="text-cucumber-950 font-semibold">+15 ألف</strong> تقييم ممتاز</span>
+              </div>
+            </div>
+
+            <div class="h-8 w-px bg-cucumber-200 hidden sm:block"></div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🥒</span>
+              <div class="flex flex-col text-right">
+                <span class="font-bold text-cucumber-950">مستخلص الخيار</span>
+                <span class="text-[11px] text-cucumber-600">تهدئة فورية للبشرة</span>
+              </div>
+            </div>
+
+            <div class="h-8 w-px bg-cucumber-200 hidden sm:block"></div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-xl">💧</span>
+              <div class="flex flex-col text-right">
+                <span class="font-bold text-cucumber-950">ترطيب 72 ساعة</span>
+                <span class="text-[11px] text-cucumber-600">نضارة مستمرة</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Visual Hero Composition (5 cols) -->
+        <div class="lg:col-span-5 relative flex items-center justify-center">
+          
+          <!-- Outer Decorative Halo in Cucumber Theme -->
+          <div class="relative w-full max-w-md aspect-[4/5] rounded-[2.5rem] p-3 sm:p-4 bg-gradient-to-b from-white/90 via-cucumber-50/60 to-cucumber-100/50 border border-cucumber-200/90 shadow-luxury-hover backdrop-blur-md">
+            
+            <div class="relative w-full h-full rounded-[2rem] overflow-hidden bg-cucumber-100/50">
+              <img 
+                src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=85" 
+                alt="مجموعة العناية بالخيار الفاخرة لوميير" 
+                class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-cucumber-950/40 via-transparent to-transparent"></div>
+
+              <!-- In-image Bottom Tag -->
+              <div class="absolute bottom-4 right-4 left-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-cucumber-200/80 shadow-lg flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] text-cucumber-600 font-semibold block">سيروم الخيار المهدئ</span>
+                  <span class="text-xs text-cucumber-950 font-bold">انتعاش ونعومة حريرية</span>
+                </div>
+                <span class="text-xs font-bold text-cucumber-700 bg-cucumber-100 px-2.5 py-1 rounded-lg">الأعلى مبيعاً</span>
+              </div>
+            </div>
+
+            <!-- Floating Pill 1: Top-left for RTL -->
+            <div class="absolute -top-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-cucumber-200 flex items-center gap-2.5 animate-bounce" style="animation-duration: 3s;">
+              <span class="w-7 h-7 rounded-xl bg-cucumber-100 text-cucumber-600 flex items-center justify-center text-sm font-bold">🌿</span>
+              <div class="text-right">
+                <span class="block text-[11px] font-bold text-cucumber-950">نباتي عضوي</span>
+                <span class="block text-[10px] text-cucumber-600">خالٍ من العطور</span>
+              </div>
+            </div>
+
+            <!-- Floating Pill 2: Bottom-right -->
+            <div class="absolute -bottom-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-cucumber-200 flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-xl bg-cucumber-500/20 text-cucumber-600 flex items-center justify-center text-sm font-bold">🥒</span>
+              <div class="text-right">
+                <span class="block text-[11px] font-bold text-cucumber-950">مستخلص الخيار</span>
+                <span class="block text-[10px] text-cucumber-600">راحة ونضارة للبشرة</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Section: Products Showcase -->
+  <main id="products-section" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full" aria-labelledby="section-heading">
+    
+    <!-- Background Ambient Glows -->
+    <div class="absolute top-1/4 -right-24 w-80 h-80 bg-cucumber-200/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 -left-20 w-96 h-96 bg-cucumber-300/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Section Header (Refined Proportions) -->
+    <div class="text-center max-w-2xl mx-auto mb-14 md:mb-16">
+      <span class="inline-block text-xs font-semibold tracking-wider text-cucumber-700 bg-cucumber-100 px-4 py-1.5 rounded-full mb-3">
+        مستحضرات عناية فائقة النقاء
+      </span>
+      <h2 id="section-heading" class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-cucumber-950 mb-3">
+        اكتشفي منتجات العناية بالخيار المميزة
+      </h2>
+      <p class="text-xs sm:text-sm text-cucumber-800/80 leading-relaxed text-balance">
+        عناصر منعشة مستخلصة من قلب الطبيعة لتهدئة بشرتك وإعادة إشراقتها ومرونتها بلمسة ترطيب مخملية فاخرة.
+      </p>
+    </div>
+
+    <!-- Product Grid: 3 Columns on Large Screens, 1 on Mobile, 2 on Tablets -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
+
+      <!-- Card 1: Hydrating Cucumber Serum -->
+      <article class="group bg-white rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 border border-cucumber-100 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between relative overflow-hidden" data-product-id="1">
+        
+        <!-- Top Badge & Wishlist -->
+        <div class="flex items-center justify-between z-10 mb-4">
+          <span class="bg-cucumber-50 text-cucumber-800 text-xs font-semibold px-3 py-1 rounded-full border border-cucumber-200">
+            الأكثر مبيعاً
+          </span>
+          <button 
+            type="button" 
+            class="wishlist-btn w-9 h-9 rounded-full bg-cucumber-50 hover:bg-cucumber-100 text-cucumber-600 transition-all duration-200 flex items-center justify-center border border-cucumber-200 focus:outline-none focus:ring-2 focus:ring-cucumber-400"
+            aria-label="إضافة سيروم الخيار للمفضلة"
+            onclick="toggleWishlist(this)"
+          >
+            <svg class="w-5 h-5 heart-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Product Image Container -->
+        <div class="relative w-full aspect-square rounded-2xl bg-cucumber-50/70 overflow-hidden mb-5 flex items-center justify-center group-hover:bg-cucumber-100/50 transition-colors">
+          <img 
+            src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80" 
+            alt="سيروم ترطيب الخيار وحمض الهيالورونيك" 
+            loading="lazy"
+            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-cucumber-950/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+
+        <!-- Content Details -->
+        <div class="flex-1 flex flex-col">
+          <!-- Rating -->
+          <div class="flex items-center gap-1 text-amber-500 text-xs mb-2" aria-label="تقييم 4.9 من 5">
+            <span class="flex gap-0.5">★★★★★</span>
+            <span class="text-cucumber-600 font-medium mr-1.5">(4.9)</span>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-cucumber-950 group-hover:text-cucumber-600 transition-colors mb-2">
+            سيروم الخيار المنعش للنضارة
+          </h3>
+
+          <p class="text-xs sm:text-sm text-cucumber-800/75 leading-relaxed mb-5 line-clamp-2 font-normal">
+            تركيبة مركزة من ماء الخيار المهدئ وحمض الهيالورونيك لإنعاش البشرة المتعبة وتقليص مظهر المسام.
+          </p>
+
+          <!-- Price & Action Button -->
+          <div class="mt-auto pt-4 border-t border-cucumber-100 flex items-center justify-between gap-3">
+            <div>
+              <span class="block text-[11px] text-cucumber-600">السعر</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-xl font-bold text-cucumber-950">185</span>
+                <span class="text-xs font-semibold text-cucumber-700">ر.س</span>
+              </div>
+            </div>
+
+            <button 
+              type="button" 
+              class="add-to-cart-btn relative px-4 sm:px-5 py-2.5 rounded-xl bg-cucumber-800 hover:bg-cucumber-600 text-white text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 shadow-sm hover:shadow active:scale-95 focus:outline-none focus:ring-2 focus:ring-cucumber-400"
+              onclick="addToCart('سيروم الخيار المنعش للنضارة')"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+              <span>أضف إلى السلة</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Cucumber Soothing Cream -->
+      <article class="group bg-white rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 border border-cucumber-300/80 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between relative overflow-hidden ring-1 ring-cucumber-400/25" data-product-id="2">
+        
+        <!-- Top Badge & Wishlist -->
+        <div class="flex items-center justify-between z-10 mb-4">
+          <span class="bg-cucumber-100 text-cucumber-800 text-xs font-semibold px-3 py-1 rounded-full border border-cucumber-200">
+            مهدئ للبشرة الحساسة
+          </span>
+          <button 
+            type="button" 
+            class="wishlist-btn w-9 h-9 rounded-full bg-cucumber-50 hover:bg-cucumber-100 text-cucumber-600 transition-all duration-200 flex items-center justify-center border border-cucumber-200 focus:outline-none focus:ring-2 focus:ring-cucumber-400"
+            aria-label="إضافة جل كريم الخيار للمفضلة"
+            onclick="toggleWishlist(this)"
+          >
+            <svg class="w-5 h-5 heart-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Product Image Container -->
+        <div class="relative w-full aspect-square rounded-2xl bg-cucumber-50/70 overflow-hidden mb-5 flex items-center justify-center group-hover:bg-cucumber-100/50 transition-colors">
+          <img 
+            src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=80" 
+            alt="جل كريم الخيار المهدئ والمرطب" 
+            loading="lazy"
+            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-cucumber-950/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+
+        <!-- Content Details -->
+        <div class="flex-1 flex flex-col">
+          <!-- Rating -->
+          <div class="flex items-center gap-1 text-amber-500 text-xs mb-2" aria-label="تقييم 5 من 5">
+            <span class="flex gap-0.5">★★★★★</span>
+            <span class="text-cucumber-600 font-medium mr-1.5">(5.0)</span>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-cucumber-950 group-hover:text-cucumber-600 transition-colors mb-2">
+            جل كريم الخيار المهدئ الفاخر
+          </h3>
+
+          <p class="text-xs sm:text-sm text-cucumber-800/75 leading-relaxed mb-5 line-clamp-2 font-normal">
+            قوام جل خفيف يمتص بلحظات، يروي عطش البشرة بمزيج الخيار البارد والسيراميد لإصلاح حاجز الرطوبة.
+          </p>
+
+          <!-- Price & Action Button -->
+          <div class="mt-auto pt-4 border-t border-cucumber-100 flex items-center justify-between gap-3">
+            <div>
+              <span class="block text-[11px] text-cucumber-600">السعر</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-xl font-bold text-cucumber-950">220</span>
+                <span class="text-xs font-semibold text-cucumber-700">ر.س</span>
+              </div>
+            </div>
+
+            <button 
+              type="button" 
+              class="add-to-cart-btn relative px-4 sm:px-5 py-2.5 rounded-xl bg-cucumber-600 hover:bg-cucumber-500 text-white text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 shadow-sm hover:shadow active:scale-95 focus:outline-none focus:ring-2 focus:ring-cucumber-400"
+              onclick="addToCart('جل كريم الخيار المهدئ الفاخر')"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+              <span>أضف إلى السلة</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Cucumber Seed Botanical Oil -->
+      <article class="group bg-white rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 border border-cucumber-100 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between relative overflow-hidden" data-product-id="3">
+        
+        <!-- Top Badge & Wishlist -->
+        <div class="flex items-center justify-between z-10 mb-4">
+          <span class="bg-cucumber-100 text-cucumber-700 text-xs font-semibold px-3 py-1 rounded-full border border-cucumber-200">
+            طبيعي 100%
+          </span>
+          <button 
+            type="button" 
+            class="wishlist-btn w-9 h-9 rounded-full bg-cucumber-50 hover:bg-cucumber-100 text-cucumber-600 transition-all duration-200 flex items-center justify-center border border-cucumber-200 focus:outline-none focus:ring-2 focus:ring-cucumber-400"
+            aria-label="إضافة زيت بذور الخيار للمفضلة"
+            onclick="toggleWishlist(this)"
+          >
+            <svg class="w-5 h-5 heart-icon transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Product Image Container -->
+        <div class="relative w-full aspect-square rounded-2xl bg-cucumber-50/70 overflow-hidden mb-5 flex items-center justify-center group-hover:bg-cucumber-100/50 transition-colors">
+          <img 
+            src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=80" 
+            alt="زيت بذور الخيار المعصور على البارد" 
+            loading="lazy"
+            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-cucumber-950/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+
+        <!-- Content Details -->
+        <div class="flex-1 flex flex-col">
+          <!-- Rating -->
+          <div class="flex items-center gap-1 text-amber-500 text-xs mb-2" aria-label="تقييم 4.8 من 5">
+            <span class="flex gap-0.5">★★★★★</span>
+            <span class="text-cucumber-600 font-medium mr-1.5">(4.8)</span>
+          </div>
+
+          <h3 class="text-base sm:text-lg font-bold text-cucumber-950 group-hover:text-cucumber-600 transition-colors mb-2">
+            زيت بذور الخيار المغذي النقي
+          </h3>
+
+          <p class="text-xs sm:text-sm text-cucumber-800/75 leading-relaxed mb-5 line-clamp-2 font-normal">
+            معصور على البارد وغني بحمض اللينوليك وفيتامين E لتجديد مرونة البشرة وحمايتها من الجفاف بنقاء فائق.
+          </p>
+
+          <!-- Price & Action Button -->
+          <div class="mt-auto pt-4 border-t border-cucumber-100 flex items-center justify-between gap-3">
+            <div>
+              <span class="block text-[11px] text-cucumber-600">السعر</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-xl font-bold text-cucumber-950">160</span>
+                <span class="text-xs font-semibold text-cucumber-700">ر.س</span>
+              </div>
+            </div>
+
+            <button 
+              type="button" 
+              class="add-to-cart-btn relative px-4 sm:px-5 py-2.5 rounded-xl bg-cucumber-800 hover:bg-cucumber-600 text-white text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 shadow-sm hover:shadow active:scale-95 focus:outline-none focus:ring-2 focus:ring-cucumber-400"
+              onclick="addToCart('زيت بذور الخيار المغذي النقي')"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+              <span>أضف إلى السلة</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Features Strip -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-cucumber-200/80 text-center">
+      <div class="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/70 border border-cucumber-100 shadow-sm">
+        <div class="w-10 h-10 rounded-full bg-cucumber-100 flex items-center justify-center text-cucumber-700 font-bold">🥒</div>
+        <span class="text-cucumber-950 font-bold text-sm">عصارة خيار طبيعية</span>
+        <span class="text-xs text-cucumber-700/80 font-normal">تهدئة فورية للمسام</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/70 border border-cucumber-100 shadow-sm">
+        <div class="w-10 h-10 rounded-full bg-cucumber-100 flex items-center justify-center text-cucumber-700 font-bold">🚀</div>
+        <span class="text-cucumber-950 font-bold text-sm">شحن سريع ومبرد</span>
+        <span class="text-xs text-cucumber-700/80 font-normal">توصيل يحافظ على الجودة</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/70 border border-cucumber-100 shadow-sm">
+        <div class="w-10 h-10 rounded-full bg-cucumber-100 flex items-center justify-center text-cucumber-700 font-bold">🔒</div>
+        <span class="text-cucumber-950 font-bold text-sm">دفع آمن 100%</span>
+        <span class="text-xs text-cucumber-700/80 font-normal">بوابات دفع مشفرة</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/70 border border-cucumber-100 shadow-sm">
+        <div class="w-10 h-10 rounded-full bg-cucumber-100 flex items-center justify-center text-cucumber-700 font-bold">✨</div>
+        <span class="text-cucumber-950 font-bold text-sm">ضمان النقاء</span>
+        <span class="text-xs text-cucumber-700/80 font-normal">معتمد وموثق مخبرياً</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Newsletter Section -->
+  <section class="bg-cucumber-100/60 py-12 border-t border-cucumber-200/80">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-xl sm:text-2xl font-bold text-cucumber-950 mb-2">انضمي إلى مجتمع لوميير</h3>
+      <p class="text-xs sm:text-sm text-cucumber-800/80 mb-6 font-normal">احصلي على خصم 15% على أول طلب وروتين عناية بالخيار مخصص لنوع بشرتك.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); showToast('شكراً لاشتراكك في نشرتنا!');">
+        <input 
+          type="email" 
+          placeholder="أدخلي بريدك الإلكتروني" 
+          required 
+          class="flex-1 px-5 py-3 rounded-xl bg-white border border-cucumber-200 text-sm focus:outline-none focus:ring-2 focus:ring-cucumber-400"
+        />
+        <button type="submit" class="px-6 py-3 rounded-xl bg-cucumber-800 hover:bg-cucumber-600 text-white text-sm font-semibold transition-colors">
+          اشتراك
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer id="footer-contact" class="bg-cucumber-950 text-cucumber-100 pt-16 pb-12 border-t border-cucumber-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-cucumber-600 flex items-center justify-center text-white font-bold">
+              🥒
+            </div>
+            <div class="flex flex-col">
+              <span class="text-lg font-bold text-white tracking-wide">لوميير</span>
+              <span class="text-[10px] tracking-widest text-cucumber-300 uppercase">Lumière Botanicals</span>
+            </div>
+          </div>
+          <p class="text-xs text-cucumber-200/80 leading-relaxed font-normal">
+            علامة رائدة في تقديم مستحضرات الجمال الطبيعي والعناية الفائقة المستخلصة من عصارة الخيار والنباتات الحية.
+          </p>
+          <div class="flex gap-3 text-cucumber-200">
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-cucumber-600 flex items-center justify-center text-xs transition-colors" aria-label="Instagram">IG</a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-cucumber-600 flex items-center justify-center text-xs transition-colors" aria-label="Twitter">X</a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-cucumber-600 flex items-center justify-center text-xs transition-colors" aria-label="Snapchat">SC</a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-cucumber-600 flex items-center justify-center text-xs transition-colors" aria-label="TikTok">TK</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4 tracking-wider">روابط سريعة</h4>
+          <ul class="space-y-2.5 text-xs text-cucumber-200/80 font-normal">
+            <li><a href="index.html" class="hover:text-cucumber-300 transition-colors">الرئيسية</a></li>
+            <li><a href="index.html#products-section" class="hover:text-cucumber-300 transition-colors">مجموعة المنتجات</a></li>
+            <li><a href="about.html" class="hover:text-cucumber-300 transition-colors">من نحن وفلسفتنا</a></li>
+            <li><a href="#" class="hover:text-cucumber-300 transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="#" class="hover:text-cucumber-300 transition-colors">سياسة الخصوصية والاسترجاع</a></li>
+          </ul>
+        </div>
+
+        <!-- Product Categories -->
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4 tracking-wider">أقسام العناية</h4>
+          <ul class="space-y-2.5 text-xs text-cucumber-200/80 font-normal">
+            <li><a href="#products-section" class="hover:text-cucumber-300 transition-colors">سيرومات الخيار والترطيب</a></li>
+            <li><a href="#products-section" class="hover:text-cucumber-300 transition-colors">كريمات التهدئة والانتعاش</a></li>
+            <li><a href="#products-section" class="hover:text-cucumber-300 transition-colors">زيوت بذور الخيار المعصورة</a></li>
+            <li><a href="#products-section" class="hover:text-cucumber-300 transition-colors">مجموعات السبا المنزلية</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Help -->
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4 tracking-wider">خدمة العملاء والتواصل</h4>
+          <ul class="space-y-3 text-xs text-cucumber-200/80 font-normal">
+            <li class="flex items-center gap-2">
+              <span class="text-cucumber-400">📍</span>
+              <span>الرياض، المملكة العربية السعودية</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cucumber-400">📞</span>
+              <span dir="ltr">+966 50 123 4567</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cucumber-400">✉️</span>
+              <span>care@lumiere-beauty.com</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cucumber-400">⏰</span>
+              <span>يومياً من 9:00 صباحاً - 10:00 مساءً</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-cucumber-900/80 flex flex-col sm:flex-row items-center justify-between text-xs text-cucumber-300/60 gap-4 font-normal">
+        <p>© 2026 لوميير (Lumière). جميع الحقوق محفوظة.</p>
+        <div class="flex gap-4">
+          <span>شروط الخدمة</span>
+          <span>•</span>
+          <span>سياسة الاستخدام</span>
+          <span>•</span>
+          <span>سجل تجاري: 1010XXXXXX</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    let cartCount = 0;
+    let toastTimeout = null;
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Add to cart handler
+    function addToCart(productName) {
+      cartCount++;
+      const counterEl = document.getElementById('cart-counter');
+      counterEl.textContent = cartCount;
+      
+      // Animate counter
+      counterEl.classList.add('scale-125');
+      setTimeout(() => {
+        counterEl.classList.remove('scale-125');
+      }, 300);
+
+      // Trigger Toast
+      showToast(`تمت إضافة "${productName}" إلى سلتك`);
+    }
+
+    // Toggle Wishlist heart
+    function toggleWishlist(btn) {
+      const heart = btn.querySelector('.heart-icon');
+      const isFilled = heart.getAttribute('fill') === 'currentColor';
+      
+      if (isFilled) {
+        heart.setAttribute('fill', 'none');
+        btn.classList.remove('bg-emerald-100', 'text-emerald-700', 'border-emerald-300');
+        btn.classList.add('text-cucumber-600');
+      } else {
+        heart.setAttribute('fill', 'currentColor');
+        btn.classList.add('bg-emerald-100', 'text-emerald-700', 'border-emerald-300');
+        btn.classList.remove('text-cucumber-600');
+        
+        heart.classList.add('scale-125');
+        setTimeout(() => heart.classList.remove('scale-125'), 200);
+      }
+    }
+
+    // Toast message function
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      
+      toastText.textContent = message;
+      
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
